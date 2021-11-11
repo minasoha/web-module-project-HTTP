@@ -27,12 +27,12 @@ const Movie = (props) => {
     axios
       .delete(`http://localhost:5000/api/movies/${id}`)
       .then((resp) => {
-        deleteMovie(resp.data);
+        deleteMovie(id);
+        push("/movies");
       })
       .catch((err) => {
         console.log(err);
       });
-    push("/movies");
   };
 
   return (
